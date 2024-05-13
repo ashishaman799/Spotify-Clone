@@ -111,20 +111,16 @@ document.addEventListener("DOMContentLoaded", function() {
       audioElement.volume = this.value / 100;
     });
     
-    // Add event listener to mute button
     muteButton.addEventListener("click", function() {
-      // Toggle mute/unmute state
-      // Replace 'audioElement' with your actual audio or video element
       audioElement.muted = !audioElement.muted;
       
-      // Toggle Font Awesome icon class based on mute state
       const icon = muteButton.querySelector("i");
       if (audioElement.muted) {
-        icon.classList.remove("fa-volume-xmark");
-        icon.classList.add("fa-volume-mute");
-      } else {
-        icon.classList.remove("fa-volume-mute");
+        icon.classList.remove("fa-volume-high");
         icon.classList.add("fa-volume-xmark");
+      } else {
+        icon.classList.remove("fa-volume-xmark");
+        icon.classList.add("fa-volume-high");
       }
     });
   });
